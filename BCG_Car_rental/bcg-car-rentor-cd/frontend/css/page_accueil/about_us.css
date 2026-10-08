@@ -1,0 +1,52 @@
+.about-us {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 80%;
+    margin: auto;
+    padding-bottom: 40px;
+}
+
+.about-us h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin: 0px 0 40px 0;
+    font-weight: bold;
+}
+
+.desc-logo {
+    display: flex;
+    border-radius: 30px;
+    border-top: 1px solid whitesmoke;
+    border-bottom: 1px solid whitesmoke;
+    padding: 40px 30px 40px 40px;
+}
+
+.about-us-desc {
+    flex: 1;
+    width: 50%;
+    padding-right: 30px;
+}
+
+.desc-logo .about-us-desc .p1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 20px 0 20px 0;
+}
+.desc-logo .about-us-desc .p2 {
+    font-size: 0.9rem;
+    font-style: italic;
+    margin: 10px 0;
+}
+
+.about-us-logo {
+    flex: 1;
+    width: 50%;
+    padding-left: 30px;
+    /* background: rebeccapurple; */
+}
+.about-us-logo img {
+    /* size: 10px; */
+    /* background: teal; */
+    width: 100%;
+}

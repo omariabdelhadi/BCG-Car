@@ -1,0 +1,207 @@
+
+
+.container_formulaire {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 2%;
+    transform: translateX(-50%);
+    /* max-width: 1000px; */
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px 30px;
+    background-color: rgba(68, 68, 68, 0.95);
+    /* background-color: red; */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container_formulaire .titre {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background-color: blue; */
+    margin-bottom: 15px;
+}
+
+.container_formulaire .titre h1 {
+    text-align: center;
+    color: whitesmoke;
+}
+
+/* Styles du formulaire */
+#vehiculeForm .form-group {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#vehiculeForm .form-group .form-field {
+    width: 48%;
+}
+
+#vehiculeForm .form-group .form-field label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: white;
+}
+
+#vehiculeForm .form-group .form-field input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 14px;
+    color: whitesmoke;
+    letter-spacing: 1px;
+    /* border: 1px solid #ddd; */
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #222;
+}
+
+#vehiculeForm .form-group .form-field input[type="text"]:focus,
+#vehiculeForm .form-group .form-field input[type="number"]:focus,
+#vehiculeForm .form-group .form-field select:focus {
+    /* border-color: #3498db; */
+    /* box-shadow: 0 0 5px rgba(52, 152, 219, 0.3); */
+    outline: none;
+    /* background-color: #333; */
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+#vehiculeForm .form-group .form-field .radio-group {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#vehiculeForm .form-group .form-field .radio-group input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Boutons */
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.form-buttons button,#annulerBtn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-buttons .btn-submit {
+    background-color: #000000;
+    color: white;
+}
+
+.btn-submit:hover {
+    background-color: #1b1c1c;
+}
+
+.btn-reset {
+    background-color: #828282;
+    color: white;
+}
+
+.btn-reset:hover {
+    background-color: #b3b3b3;
+}
+.btn-annuler {
+    background-color: rgb(184, 0, 0);
+    color: white;
+}
+.btn-annuler:hover {
+    background-color: rgb(212, 0, 0);
+}
+/* Style pour l'input file personnalisé */
+.custom-file-input {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    padding-top: 10px;
+}
+
+.custom-file-input input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.custom-file-input .file-label {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #3498db;
+    color: white;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-file-input .file-label:hover {
+    background-color: #2980b9;
+}
+
+.custom-file-input{
+    /* margin-left: 10px; */
+    font-size: 14px;
+    color: #666;
+}
+.file-name{
+    margin-left: 10px;
+    font-size: 14px;
+    color: black;
+}
+
+/* Focus styles */
+.custom-file-input input[type="file"]:focus + .file-label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+/* Responsive design */
+@media (max-width:730px  ) {
+    .titre #annulerBtn {
+        display: none;
+    }
+}
+@media (max-width:960px  ) {
+    .form-group {
+        flex-direction: column;
+    }
+    .form-group .form-field {
+        width: 100%;
+    }
+}
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    
+    button {
+        width: 100%;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+
+}

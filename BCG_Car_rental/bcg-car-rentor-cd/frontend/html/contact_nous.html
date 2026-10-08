@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>contactez nous</title>
+  <link rel="stylesheet" href="../css/page_accueil/nav_bar.css" />
+  <link rel="stylesheet" href="../css/contact_nous/contact_nous.css" />
+  <!-- Google icons  -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+    rel="stylesheet" />
+  <!-- font icons  -->
+  <link rel="stylesheet" href="/frontend/fontawesome-free-6.7.2-web/css/all.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div>
+    <header>
+      <!-- ***** Nav bar ***** -->
+      <div id="navbar_container"></div>
+    </header>
+
+    <!-- ***** main section (text,button,image) ***** -->
+    <section>
+
+      <div class="map-container">
+        <iframe class="map-iframe"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d53157.075486762!2d-8.0769722!3d31.6411667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzHCsDM4JzI4LjIiTiA4wrAwNCczNy4xIlc!5e0!3m2!1sen!2sma!4v1745396541480!5m2!1sen!2sma"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+
+      <div class="contact-container">
+        <div class="contact-form">
+          <h2>Contacter nous</h2>
+          <form id="contactForm">
+            <div class="form-group1">
+              <input type="text" placeholder="Votre nom" required id="nom" />
+              <input type="text" placeholder="Votre prénom" required id="prenom" />
+            </div>
+            <div class="form-group">
+              <input type="tel" placeholder="Numéro de téléphone" required id="telephone" />
+              <input type="email" placeholder="example@gmail.com" required id="email" />
+            </div>
+            <textarea placeholder="Votre message ici ..." required id="messageE"></textarea>
+            <button type="submit" class="envoyer">Envoyer</button>
+          </form>
+        </div>
+
+        <div class="contact-info">
+          <h2 class="card-title">Contact nous ici !</h2>
+          <div class="card-content">
+            <div class="info">
+              <a href="mailto:bcgcarrental@business.com" target="_blank">
+                <i class="fa-solid fa-envelope"></i>
+                <span>bcglocation@gmail.com</span>
+              </a>
+            </div>
+            <div class="info">
+              <a href="tel:+212500255526" target="_blank">
+                <i class="fa-solid fa-phone"></i>
+                <span>0661901873</span>
+              </a>
+            </div>
+            <div class="info">
+              <a href="http://wa.me/0615222666" target="_blank">
+                <i class="fa-solid fa-mobile-screen"></i>
+                <span>0778925850</span>
+              </a>
+            </div>
+            <div class="info">
+              <a href="http://wa.me/0615222666" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
+                <span>0661901872</span>
+              </a>
+            </div>
+            <div class="info">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>LES PORTES DE MARRAKCH ZONE 20 IMM 114 <br> &nbsp &nbsp &nbsp &nbsp &nbsp APP 12 MARRAKECH</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </div>
+</body>
+
+
+<script src="/frontend/js/routes_config.js"></script>
+<script type="module" src="../js/send_contact_message.js"></script>
+<script src="../js/nav_bar.js"></script>
+
+</html>

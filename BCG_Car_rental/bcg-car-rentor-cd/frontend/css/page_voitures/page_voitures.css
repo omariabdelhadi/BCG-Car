@@ -1,0 +1,71 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Exo', sans-serif;
+}
+
+body {
+    scroll-behavior: smooth;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgb(0, 0, 0) 100%), url('../../images/main-bg.png');
+    background-size: 100% 1215px;
+    background-repeat: no-repeat;
+    background-color: black; 
+}
+
+.filters {
+    width: 100%;
+}
+
+.filters .find-car {
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 40px 0 10px 0;
+    font-weight: bold;
+    color: white;
+}
+
+.filter-bar {
+    /* background-color: red; */
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: auto;
+    margin-bottom: 40px;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 70%;
+}
+
+.filter-bar select,
+.filter-bar input {
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    width: 25%;
+}
+.filter-bar button {
+    width: auto;
+    height: auto;
+    padding: 10px 30px;
+    background: transparent;
+    outline: none;
+    border: 1px solid whitesmoke;
+    color: whitesmoke;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    margin: 12px 12px;
+    transition: 0.3s;
+}
+.filter-bar button:hover {
+    background: whitesmoke;
+    color: black;
+    box-shadow: 3px 2px 20px -5px rgb(255, 255, 255);
+}
+.filter-bar button:active {
+    transform: translateY(1px);
+    background: #d5d5d5;
+}

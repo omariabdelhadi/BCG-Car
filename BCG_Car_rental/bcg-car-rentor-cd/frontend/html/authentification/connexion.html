@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="../../css/authentification/connexion.css">
+    <link rel="stylesheet" href="../../css/bloc_message.css">
+    <link rel="stylesheet" href="/frontend/fontawesome-free-6.7.2-web/css/all.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="login-container">
+            <div class="login-form-wrapper">
+                <div class="login-form">
+                    <div id="retour">
+                        <a href="../page_accueil.html"> <i class="fa-solid fa-arrow-left"></i>Accueil </a>
+                    </div>
+                    <h1>Se connecter</h1>
+                    <p class="subtitle">Si vous n'avez pas un compte, <a href="../authentification/inscription.html"
+                            class="signup-link">veuillez vous inscrire</a></p>
+
+                    <form id="login-form" action="#" method="post">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                            <div class="error-message" id="email-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div id="password_group">
+                                <input type="password" id="password" name="password"
+                                    placeholder="Exactement 8 caractères" required>
+                                <i id="eye" class="fa-solid fa-eye-slash"></i>
+                            </div>
+                            <div class="error-message" id="password-error"></div>
+                            <div class="forgot-password">
+                                <a href="#">Mot de passe oublié?</a>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="submit" class="login-btn primary-btn">Connecter</button>
+                        </div>
+
+                        <div class="separator">
+                            <span>ou</span>
+                        </div>
+
+                        <div class="form-group">
+                            <button type="button" class="google-btn">
+                                <img src="https://www.google.com/favicon.ico" alt="Google" class="google-icon">
+                                <span>Connecter avec Google</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="login-image">
+                    <img src="../../images/logo2.png" alt="Illustration voiture">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- div pour le message -->
+    <div id="glob">
+        <div id="content">
+            <h2 id="message">message</h2>
+            <ul id="errors">
+            </ul>
+            <div id="btn">
+                <button>event</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // script pour afficher le password
+        const eye = document.getElementById('eye');
+        const passwordInput = document.getElementById('password');
+        eye.addEventListener('click', function () {
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                eye.classList.remove('fa-eye-slash');
+                eye.classList.add('fa-eye');
+            } else {
+                passwordInput.type = 'password';
+                eye.classList.remove('fa-eye');
+                eye.classList.add('fa-eye-slash');
+            }
+        });
+    </script>
+
+    <script src="/frontend/js/routes_config.js"></script>
+    <script type="module" src="../../js/authentification/connexion.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,293 @@
+.profile {
+    height: calc(100vh - 110px);
+    display: flex;
+    flex-direction: column;
+}
+
+.profile-container {
+    background-color: rgba(68, 68, 68, 0.9);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 30px;
+    flex: 1;
+    overflow: auto;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+.profile-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+/* Section du haut - Image et inputs nom/prénom */
+.profile-top {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 20px 0;
+    border-bottom: 2px solid #444;
+    margin-bottom: 20px;
+}
+
+.profile-top-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 30%;
+}
+
+.profile-top-right {
+    flex: 1;
+}
+
+/* Section du bas - Formulaire */
+.profile-bottom {
+    flex: 1;
+}
+
+/* Section gauche - Image et infos utilisateur */
+.profile-image-container {
+    position: relative;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    border: 3px solid #444;
+    transition: all 0.3s ease;
+}
+
+.profile-image:hover {
+    border-color: #666;
+    transform: scale(1.05);
+}
+
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-image i {
+    font-size: 4rem;
+    color: #666;
+    transition: all 0.3s ease;
+}
+
+.profile-image:hover i {
+    transform: scale(1.2);
+    color: #888;
+}
+
+.image-upload-overlay {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: #2d2d2d;
+    border: 3px solid #444;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.image-upload-overlay:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.image-upload-overlay i {
+    font-size: 1rem;
+    color: #fff;
+}
+
+.user-info {
+    text-align: center;
+}
+
+.user-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #fff;
+}
+
+.user-email {
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+
+.form-section {
+    margin-bottom: 30px;
+}
+
+.form-section-title {
+    font-size: 1.3rem;
+    color: #ddd;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #444;
+}
+
+.profile-top-right .form-row {
+
+    flex-direction: column;
+}
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group.full-width {
+    width: 100%;
+}
+
+label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #ddd;
+    font-size: 0.9rem;
+}
+
+.form-control {
+    padding: 15px 18px;
+    border-radius: 6px;
+    border: none;
+    background-color: #222;
+    color: #fff;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.form-control:focus {
+    background-color: #333;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.form-control::placeholder {
+    color: #666;
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+}
+
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 120px;
+}
+
+.btn-save {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+.btn-save:hover {
+    background-color: #2d2d2d;
+}
+
+.btn-cancel {
+    background-color: #2d2d2d;
+    border: 1px solid #444;
+    color: #ccc;
+}
+
+.btn-cancel:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .profile-top {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .profile-top-left {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .profile-top-right {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .form-row {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .profile-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .image-upload-overlay {
+        width: 30px;
+        height: 30px;
+    }
+
+    .buttons {
+        flex-direction: column;
+    }
+
+    .profile-top {
+        padding: 15px 0;
+    }
+}

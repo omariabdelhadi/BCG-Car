@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commentaires</title>
+    <link rel="stylesheet" href="../../css/client/commentaires.css">
+    <link rel="stylesheet" href="../../css/admin/sidebar_header.css">
+    <link rel="stylesheet" href="../../fontawesome-free-6.7.2-web/css/all.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+
+
+        <!-- div sidebar -->
+        <div class="sidebar" id="side">
+
+        </div>
+        <div class="main">
+
+            <!-- div pour header -->
+            <header class="header" id="header">
+
+            </header>
+
+            <div class="content">
+                <div class="comments">
+                    <div style="display: flex; align-items: center; justify-content: space-between;">
+                        <h1>Gestion des commentaires</h1>
+                        <div id="ajouter"><button id="ajouterBtn"> <i class="fa fa-plus"></i></button></div>
+                    </div>
+                    <div class="comments-cards">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+    <!-- formulaire pour le commentaire -->
+    <div id="form_container">
+        <form id="commentaire_form">
+            <input type="text" hidden id="action" value="">
+            <div class="form_group">
+                <!-- <label for="content">Commentaire : </label> -->
+                <textarea rows="5" cols="10" id="contenu"></textarea>
+            </div>
+            <div class="form_group">
+                <label for="note">Note : </label>
+                <div id="range_div">
+                    <input type="range" step="1" min="0" max="5" id="note" value="3">
+                    <span id="note_span">3</span>
+                </div>
+            </div>
+            <div class="form_btns">
+                <button id="enregistrerBtnC" type="submit"><i class="fa-solid fa-check"></i></button>
+                <button id="annulerBtnC" type="reset"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // pour afficher la valeur de l'input range
+        document.querySelector("#note").addEventListener('input', () => {
+            document.querySelector("#note_span").textContent = document.querySelector("#note").value
+        })
+
+        // pour cacher le formulaire
+        document.querySelector("#annulerBtnC").addEventListener('click', () => {
+            document.querySelector("#form_container").style.display = "none"
+        })
+
+        // ajouter au textarea d'etre focused par défaut
+        const textarea = document.querySelector("textarea"); // Sélectionne la première textarea
+        if (textarea) {
+            textarea.focus(); // Focalise l'élément
+            textarea.type
+        }
+    </script>
+
+    <script src="/frontend/js/routes_config.js"></script>
+    <script type="module" src="../../js/client/sidebar_header.js"></script>
+    <script type="module" src="../../js/client/commentaires.js"></script>
+</body>
+
+</html>

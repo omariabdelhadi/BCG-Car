@@ -1,0 +1,261 @@
+* {
+    font-family: "Exo";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../images/main-bg.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+}
+
+/* Styles pour le conteneur de connexion */
+.login-container {
+    background-color: rgba(68, 68, 68, 0.9);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.login-form-wrapper {
+    display: flex;
+    min-height: 500px;
+}
+
+/* Styles pour le formulaire */
+.login-form {
+    flex: 1;
+    padding: 40px;
+    padding-top: 0;
+    color: white;
+}
+
+.login-form h1 {
+    font-size: 2rem;
+    margin: 20px 0 10px 0;
+    color: white;
+}
+
+.subtitle {
+    color: #b0b0b0;
+    margin-bottom: 30px;
+    font-size: 0.95rem;
+}
+
+.signup-link {
+    color: rgb(0, 149, 255);
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+.signup-link:hover {
+    color: rgb(0, 191, 255);
+    text-decoration: underline;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: white;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 1rem;
+    transition: box-shadow 0.3s;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgb(0, 149, 255);
+}
+
+.forgot-password {
+    text-align: right;
+    margin-top: 8px;
+}
+
+.forgot-password a {
+    color: rgb(0, 149, 255);
+    font-size: 0.85rem;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+.forgot-password a:hover {
+    color: rgb(0, 191, 255);
+    text-decoration: underline;
+}
+
+/* Styles pour les boutons */
+.primary-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.primary-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.google-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: white;
+    color: #333;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.google-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.google-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+/* Style pour le séparateur */
+.separator {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.separator::before,
+.separator::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.separator span {
+    padding: 0 10px;
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+/* Style pour l'image */
+.login-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(80, 80, 80, 0.4);
+}
+
+.login-image img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+/* style pour l'eye du password */
+#password_group {
+    position: relative;
+}
+#eye {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #333;
+}
+
+/* Style pour les messages d'erreur */
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    min-height: 1.2em;
+}
+
+.input-error {
+    border: 2px solid #ff6b6b !important;
+    background-color: #fff8f8;
+}
+
+/*** lien pour retour */
+#retour {
+    display: block;
+    width: 100%;
+    text-align: start;
+    padding: 20px 0 10px 0;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    color: whitesmoke;
+    border-bottom: 1px solid white;
+}
+#retour a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+#retour i {
+    margin-right: 5px;
+}
+
+/* Media queries pour la responsivité */
+@media (max-width: 768px) {
+    .login-form-wrapper {
+        flex-direction: column;
+    }
+    
+    .login-image {
+        order: -1;
+        padding: 30px;
+        max-height: 250px;
+    }
+    
+    .login-form {
+        padding: 30px;
+    }
+}

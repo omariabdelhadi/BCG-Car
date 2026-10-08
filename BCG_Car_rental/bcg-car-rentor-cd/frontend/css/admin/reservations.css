@@ -1,0 +1,266 @@
+.content h1 {
+  font-size: 2rem;
+  color: whitesmoke;
+  /* margin: 30px 0 0 38px; */
+}
+
+.table-container {
+  background-color: var(--card-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  padding: 1rem;
+  max-width: 100%;
+  overflow: hidden;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+table {
+  margin-top: 20px;
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  /* Ajouté pour forcer le respect des largeurs */
+}
+
+thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+th:nth-child(1), td:nth-child(1) { width: 8%; }    /* ID */
+th:nth-child(2), td:nth-child(2) { width: 14%; }   /* Nom */
+th:nth-child(3), td:nth-child(3) { width: 16%; }   /* Prénom */
+th:nth-child(4), td:nth-child(4) { width: 14%; }   /* Prénom */
+th:nth-child(5), td:nth-child(5) { width: 14%; }   /* Téléphone */
+th:nth-child(6), td:nth-child(6) { width: 14%; }   /* Email */
+th:nth-child(7), td:nth-child(7) { width: 10%; }   /* Adresse */
+th:nth-child(8), td:nth-child(8) { width: 10%; }    /* Réservations */
+
+th,
+td {
+  padding: 0.75em 1em;
+  text-align: left;
+  border-bottom: 0.1em solid #333;
+  background-color: var(--card-color);
+  white-space: normal;
+  overflow: visible;
+  word-break: break-word;
+}
+
+td:hover {
+  z-index: 20;
+  position: relative;
+  background-color: var(--card-color);
+}
+
+th {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: whitesmoke;
+  background-color: rgb(66, 66, 66);
+}
+
+tbody {
+  display: block;
+  overflow-y: auto;
+  max-height: calc(80vh - 120px);
+}
+
+thead,
+tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.confirm-btn {
+  background: #0f6b12;
+  color: whitesmoke;
+  padding: 3px;
+  font-size: 0.8rem;
+  width: 80px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+.confirm-btn:hover {
+  background-color: #45a049;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+.confirm-btn:active {
+  background-color: #3d8b40;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+  transition: all 0.1s;
+}
+.confirm-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.delete-btn, .refused .status-text  {
+  background: rgb(178, 13, 13);
+  color: whitesmoke;
+  padding: 3px;
+  font-size: 0.8rem;
+  width: 80px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+}
+.delete-btn:hover {
+  background-color: #d84545;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+.delete-btn:active {
+  /* background-color: #3d8b40; */
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  transform: translateY(1px);
+  transition: all 0.1s;
+}
+.delete-btn::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%, -50%);
+  transform-origin: 50% 50%;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  grid-column: 1 / -1;
+  color: #666;
+}
+
+.no-reservations {
+  text-align: center;
+  padding: 20px;
+  grid-column: 1 / -1;
+  color: #666;
+}
+
+
+.paiement, .refused {
+  width: max-content;
+}
+
+.refused .status-text {
+  padding: 5px;
+  font-weight: 600;
+} 
+
+.reservation-status.refused .status-text::before {
+  content: "✕";
+  margin-right: 5px;
+}
+
+.statusPaiement {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  width: 80px;
+}
+
+.status-paid {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+
+/* ====== Button d'ajout ====== */
+#reload {
+  /* background-color: red; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 20px;
+}
+#reload button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 1.5% 0px; */
+  height: 40px;
+  width: 40px;
+  background: rgb(0, 0, 159);
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: 0.3s;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+}
+
+#reload button:hover {
+  background-color: rgb(1, 1, 206);
+}
+
+/* pour le span de l'expiration */
+.expiree {
+  display:inline-block;
+  background: rgb(178, 13, 13);
+  color: whitesmoke;
+  padding: 5px;
+  font-size: 0.8rem;
+  width: max-content;
+  border: none;
+  border-radius: 5px;
+  margin-right: 5px;
+  margin-bottom: 3px;
+}
+.expiree::after {
+  content: "✕";
+  margin-left: 5px;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0, 0);
+    opacity: 0.7;
+  }
+  20% {
+    transform: scale(20, 20);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+    transform: scale(50, 50);
+  }
+}

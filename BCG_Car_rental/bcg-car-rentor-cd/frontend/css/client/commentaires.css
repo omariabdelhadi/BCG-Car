@@ -1,0 +1,291 @@
+h1 {
+    color: white;
+    text-align: left;
+
+}
+.comments {
+    height: 80vh;
+    padding: 30px;
+}
+
+.comments .comments-cards {
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+    height: 100%;
+    overflow: auto;
+    padding: 20px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.comments .comments-cards .comment-card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: #D9D9D9;
+    border: none;
+    color: #000;
+    border-radius: 15px;
+    padding: 1rem 1.5rem;
+    height: 140px;
+}
+
+.comments .comments-cards .comment-card .comment-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .3rem;
+    margin-top: -.3rem;
+}
+.comments .comments-cards .comment-card .comment-card-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    width: max-content;
+    transition: transform 300ms ease;
+}
+.comments .comments-cards .comment-card:hover .comment-card-header h2 {
+    transform: translateX(0.15rem)
+}
+
+
+
+.comments .comments-cards .comment-card p {
+    font-size: 0.9rem;
+    color: #000;
+    align-items: center;
+    margin-bottom: .5rem;
+    transition: transform 300ms ease;
+}
+.comment-card::after {
+    position: absolute;
+    content: "";
+    width: 0.25rem;
+    inset: 0.7rem auto 0.7rem 0.65rem;
+    border-radius: 0.125rem;
+    background: black;
+    transition: transform 300ms ease;
+    z-index: 4;
+}
+.comments .comments-cards .comment-card:hover p {
+    transform: translateX(0.15rem)
+}
+
+.comment-card:hover:after {
+    transform: translateX(0.15rem)
+}
+
+/* ====== Button d'ajout ====== */
+#ajouter {
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#ajouter button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 1.5% 0px; */
+    height: 40px;
+    width: 40px;
+    background: rgb(0, 0, 159);
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.1rem;
+    font-weight: 700;
+    transition: 0.3s;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+}
+
+#ajouter button:hover {
+    background-color: rgb(1, 1, 206);
+}
+
+
+/* pour le div contient les icons d'action */
+#actions {
+    padding: 5px 0;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+#supprimerBtn, #modifierBtn {
+    background-color: inherit;
+    border: none;
+    outline: none;
+}
+#supprimerBtn i, #modifierBtn i {
+    margin: 0 5px;
+    font-size: 13px;
+    color: white;
+    height: 27px;
+    width: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25%;
+    cursor: pointer;
+    transition: 0.5s;
+}
+#supprimerBtn i {
+    background-color: rgb(206, 1, 1);
+}
+#supprimerBtn i:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+#modifierBtn i {
+    background-color: rgb(0, 0, 150);
+}
+#modifierBtn i:hover {
+    background-color: rgb(0,0,255);
+} 
+
+
+
+/************* pour le formulaire duc ommentaire */
+#form_container {
+    display: none;
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.721);
+}
+
+#form_container form {
+    background-color: rgba(68, 68, 68, 0.95);
+    position: relative;
+    width: 50%;
+    max-width: 600px;
+    min-width: 300px;
+    border-radius: 5px;
+    padding: 20px;
+    animation: fadeIn 0.3s ease;
+}
+
+#form_container form .form_group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+#form_container form .form_group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: white;
+}
+
+#form_container form .form_group input[type="range"] ,textarea {
+    width: 100%;
+    padding: 14px;
+    color: whitesmoke;
+    letter-spacing: 1px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #222;
+}
+
+#form_container form .form_group #range_div {
+    display: flex;
+    flex-direction: row;
+}
+#form_container form .form_group input[type="range"] {
+    width: 50%;
+    padding: 0;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#form_container form .form_group textarea {
+    resize: none;
+}
+
+
+#form_container form .form_group textarea:focus {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+
+/* Boutons */
+.form_btns {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+    padding-right: 10px;
+}
+
+.form_btns button {
+    background-color: inherit;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form_btns button i {
+    margin: 0 3px;
+    /* font-size: 13px; */
+    color: white;
+    height: 27px;
+    width: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+#enregistrerBtnC i {
+    width: 22px;
+    height: 20px;
+    border-radius: 5px;
+}
+#enregistrerBtnC {
+    background-color: rgb(1, 206, 1);
+}
+#enregistrerBtnC:hover {
+    background-color: rgb(0, 255, 0);
+}
+
+#annulerBtnC i {
+    background-color: rgb(206, 1, 1);
+}
+#annulerBtnC i:hover {
+    background-color: rgb(255, 0, 0);
+}
+
+
+
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

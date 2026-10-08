@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin dashboard</title>
+	<link rel="stylesheet" href="../../css/admin/dashboard.css">
+	<link rel="stylesheet" href="../../css/admin/sidebar_header.css">
+	<link rel="stylesheet" href="../../fontawesome-free-6.7.2-web/css/all.css" />
+	<link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap"
+		rel="stylesheet">
+</head>
+
+<body>
+	<div class="container">
+
+
+		<!-- div sidebar -->
+		<div class="sidebar" id="side">
+
+		</div>
+		<div class="main">
+
+			<!-- div pour header -->
+			<header class="header" id="header">
+
+			</header>
+
+			<div class="content">
+				<div class="dashboard-content">
+					<h1>Bienvenue dans le tableau de bord</h1>
+					<div class="stats-cards">
+
+						<div class="stat-card">
+							<div class="stat-card-content">
+								<div class="stat-card-info">
+									<h3>Voitures totales</h3>
+									<h2 id="nbreVoitures"></h2>
+								</div>
+								<div class="stat-card-icon vehicle-icon">
+									<i class="fas fa-car"></i>
+								</div>
+							</div>
+							<div class="stat-footer">
+								<a href="./voitures.html">Voir plus</a>
+							</div>
+						</div>
+
+						<div class="stat-card">
+							<div class="stat-card-content">
+								<div class="stat-card-info">
+									<h3>Locations actives</h3>
+									<h2 id="reservationsActives"></h2>
+								</div>
+								<div class="stat-card-icon rental-icon">
+									<i class="fas fa-key"></i>
+								</div>
+							</div>
+							<div class="stat-footer">
+								<a href="./reservations.html">Voir plus</a>
+							</div>
+						</div>
+
+						<div class="stat-card">
+							<div class="stat-card-content">
+								<div class="stat-card-info">
+									<h3>Clients</h3>
+									<h2 id="nbreClients"></h2>
+								</div>
+								<div class="stat-card-icon customer-icon">
+									<i class="fas fa-user-plus"></i>
+								</div>
+							</div>
+							<div class="stat-footer">
+								<a href="./clients.html">Voir plus</a>
+							</div>
+						</div>
+
+						<div class="stat-card">
+							<div class="stat-card-content">
+								<div class="stat-card-info">
+									<h3>Revenu</h3>
+									<h2 id="revenueTotal"></h2>
+								</div>
+								<div class="stat-card-icon revenue-icon">
+									<i class="fas fa-dollar-sign"></i>
+								</div>
+							</div>
+							<div class="stat-footer">
+								<a href="./reservations.html">Voir plus</a>
+							</div>
+						</div>
+
+					</div>
+					<div class="recent-section">
+						<div class="section-header">
+							<h3>Réservations récentes</h3>
+							<a href="./reservations.html" class="view-all">Voir plus</a>
+						</div>
+						<div class="table-container">
+							<table class="data-table">
+								<thead>
+									<tr>
+										<th>N °</th>
+										<th>Client</th>
+										<th>Voiture</th>
+										<th>Date de départ</th>
+										<th>Date de retour</th>
+										<th>Statut</th>
+										<th>Montant</th>
+									</tr>
+								</thead>
+								<tbody id="recent-bookings-table">
+									<!-- Table rows will be loaded by JavaScript -->
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+	<script src="/frontend/js/routes_config.js"></script>
+	<script type="module" src="../../js/admin/sidebar_header.js"></script>
+	<script type="module" src="../../js/admin/dashboard.js"></script>
+</body>
+
+</html>
